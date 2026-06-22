@@ -36,6 +36,6 @@ class FancyChaiShop(ChaiShop):
 
 shop = ChaiShop()
 fancy = FancyChaiShop()
-shop.serve()
-fancy.serve()
+# shop.serve()
+# fancy.serve()
 fancy.chai.add_spices()
