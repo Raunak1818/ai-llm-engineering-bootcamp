@@ -1,1 +1,2 @@
-Barista1
+        # with lock:
+        #     counter += 1
