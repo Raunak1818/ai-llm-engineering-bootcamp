@@ -89,4 +89,29 @@ async def main():
         result = await asyncio.gather(*task)
         print(result)
 
+# asyncio.run(main())
+
+
+
+import asyncio
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+
+def fetch_user(item):
+    print(f"publishing {item}....")
+    time.sleep(2)
+    return f"{item} is ready"
+
+
+async def main():
+
+    articles = ["1. article", "2. article", "3. article"]
+
+    loop = asyncio.get_running_loop()
+    with ThreadPoolExecutor() as pool:
+        task = [loop.run_in_executor(pool, fetch_user, article) for article in articles]
+        result = await asyncio.gather(*task)
+        print(result)
+
 asyncio.run(main())
