@@ -100,7 +100,7 @@ while True:
 
     while True:
         response = client.chat.completions.parse(
-            model= "gemini-3.6-flash",
+            model= "gemini-3.5-flash-lite",
             response_format= MyOutputFormat,
             messages= message_history
         )
